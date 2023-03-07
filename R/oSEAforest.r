@@ -26,7 +26,7 @@
 #' obj %>% oSEAextract() %>% filter(onto=='PSG') %>% oSEAforest()
 #' }
 
-oSEAforest <- function(obj, top=10, adjp.cutoff=0.05,  colormap="brewer.Reds", zlim=NULL, color.title="-log10(adjP)", shape=18, size.range=c(0,1), slim=NULL, size.title="Overlap", wrap.width=NULL, legend.direction=c("auto","horizontal","vertical"), sortBy=c("or","none"))
+oSEAforest <- function(obj, top=10, adjp.cutoff=0.05,  colormap="brewer.Reds", zlim=NULL, color.title=expression(-log[10]("adjp")), shape=18, size.range=c(0,1), slim=NULL, size.title="Overlap", wrap.width=NULL, legend.direction=c("auto","horizontal","vertical"), sortBy=c("or","none"))
 {
     
 	## match.arg matches arg against a table of candidate values as specified by choices, where NULL means to take the first one
@@ -133,7 +133,7 @@ oSEAforest <- function(obj, top=10, adjp.cutoff=0.05,  colormap="brewer.Reds", z
 	df %>% ggplot(aes(y=name, x=log2(or), xmin=log2(CIl), xmax=log2(CIu), color=color)) + geom_pointrange(aes(size=size),shape=shape) -> gp
 	#gp + geom_vline(xintercept=0, color='grey80') -> gp
 	
-	gp <- gp + xlab(expression(log[2]("Odds ratio")))
+	gp <- gp + xlab(expression(log[2]("odds ratio")))
 	
 	gp <- gp + theme_classic() + theme(legend.position="right", legend.title=element_text(size=7), legend.text=element_text(size=6), axis.title.y=element_blank(), axis.title.x=element_text(size=7), axis.text.y=element_text(size=6,angle=0), axis.text.x=element_text(size=7))
 	gp <- gp + theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank())
