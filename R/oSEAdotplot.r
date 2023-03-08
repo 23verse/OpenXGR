@@ -83,7 +83,7 @@ oSEAdotplot <- function(obj, FDR.cutoff=0.05, colors=c("pink","red"), y.scale=c(
 	gp <- ggplot(df_enrichment_group, aes(x=zscore, y=-log10(adjp), size=nO))
 	gp <- gp + geom_point(aes(color=flag,size=nO),alpha=0.6)
 	gp <- gp + scale_colour_manual(values=colors) + guides(color="none")
-	gp <- gp + xlab("Z-score") + ylab(expression(-log[10]("FDR")))
+	gp <- gp + xlab("Z-score") + ylab(expression(log[10]("1/FDR")))
 	gp <- gp + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 	
 	if(is.null(slim)){
