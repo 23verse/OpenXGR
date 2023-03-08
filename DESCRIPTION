@@ -2,7 +2,7 @@ Package: OpenXGR
 Type: Package
 Title: Enhanced genomic summary data interpretation leveraging ontologies and networks 
 Version: 1.0.0
-Date: 2023-3-7
+Date: 2023-3-8
 Authors@R: c(person("Hai", "Fang", email="fh12355@rjh.com.cn", role=c("aut","cre")))
 Maintainer: Hai Fang <fh12355@rjh.com.cn>
 Depends: R (>= 4.2.0), igraph, ggplot2
@@ -39,5 +39,6 @@ Collate:
      'oGGnetwork.r'
      'oGR2xGeneScores.r'
      'oGRscores.r'
+     'oGR2nGenes.r'
 License: GPL-2
 biocViews: SystemsBiology, FunctionalGenomics, Ontologies, Networks, GeneTarget
